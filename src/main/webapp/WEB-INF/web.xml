@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
+   <display-name>ProjetoInicial</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>senac.jp.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CadastarServlet</display-name>
+    <servlet-name>CadastarServlet</servlet-name>
+    <servlet-class>senac.jp.servlet.CadastarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastarServlet</servlet-name>
+    <url-pattern>/CadastarServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>ConfirmarCadastroServlet</display-name>
+    <servlet-name>ConfirmarCadastroServlet</servlet-name>
+    <servlet-class>senac.jp.servlet.ConfirmarCadastroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfirmarCadastroServlet</servlet-name>
+    <url-pattern>/ConfirmarCadastroServlet</url-pattern>
+  </servlet-mapping> 
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>VoltarListarAlunosServlet</display-name>
+    <servlet-name>VoltarListarAlunosServlet</servlet-name>
+    <servlet-class>senac.jp.servlet.VoltarListarAlunosServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VoltarListarAlunosServlet</servlet-name>
+    <url-pattern>/VoltarListarAlunosServlet</url-pattern>
+  </servlet-mapping> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>
