@@ -23,25 +23,22 @@ public class ExcluirServlet extends HttpServlet {
 		
 		System.out.println("------------- Passei no servlet de detalhar ------------");
 		
+		// Recupera o id do aluno que deve ser excluido
+		String id = request.getParameter("id");
 		
-		String nome = request.getParameter("nome");
-		System.out.println(nome);
-		
-		// Adicionar a lista de alunos na sessão
-		HttpSession session =  request.getSession();	
-				
-		// Recuperando a lista da seção
+		// Recupera a lista de alunos da sessão
+		HttpSession session =  request.getSession();
 		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos"); 
 		
-		// Recuperando o aluno da lista com o nome especificado
+		// Recupera o aluno que tem o id informado (e que deve ser excluido)
 		Aluno aluno = null;
 		for (Aluno a : listaAlunos) {
-				if (a.getNome().equals(nome)) {
+				if (a.getId().toString().equals(id)) {
 					aluno = a;
 				}			
 		}
 		
-		// Removendo
+		// Removendo o aluno da lista
 		listaAlunos.remove(aluno);		
 		
 		// Encaminhar a requisição para o JSP

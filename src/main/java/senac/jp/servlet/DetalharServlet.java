@@ -24,8 +24,8 @@ public class DetalharServlet extends HttpServlet {
 		System.out.println("------------- Passei no servlet de detalhar ------------");
 		
 		
-		String nome = request.getParameter("nome");
-		System.out.println(nome);
+		// Recupera o id do aluno que precisa ser detalhado
+		String id = request.getParameter("id");
 		
 		// Adicionar a lista de alunos na sessão
 		HttpSession session =  request.getSession();	
@@ -36,15 +36,15 @@ public class DetalharServlet extends HttpServlet {
 		// Recuperando o aluno da lista com o nome especificado
 		Aluno aluno = null;
 		for (Aluno a : listaAlunos) {
-				if (a.getNome().equals(nome)) {
+				if (a.getId().toString().equals(id)) { // convertendo para string o getId
 					aluno = a;
 				}			
 		}
 		
-		// Colocar o aluno no resquest
+		// Guarda o aluno no resquest, para mostrar na pagina de detalhes
 		request.setAttribute("aluno", aluno);
 		
-		// Encaminhar a requisição para o JSP
+		// Encaminhar a requisição para a pagina detalhar aluno
 		RequestDispatcher dispatcher = request.getRequestDispatcher("detalharAluno.jsp");
 		dispatcher.forward(request, response);
 		

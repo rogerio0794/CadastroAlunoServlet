@@ -14,7 +14,7 @@
 
 	<!-- operador ternário -->
 	<%= request.getAttribute("mensagem") == null ? "" : request.getAttribute("mensagem")%> 
-	<br><br>
+	<br>
 
 	Login: <input type="text" name="nome">
 	<br><br>

@@ -13,6 +13,9 @@
   <%  Aluno aluno = (Aluno) request.getAttribute("aluno"); %>
 	
 	
+	Id: <%= aluno.getId() %>
+	<br><br>
+	
 	Nome: <%= aluno.getNome() %>
 	<br><br>
 	
@@ -29,7 +32,7 @@
 	
 	<!--  a href="listarAlunos.jsp">Voltar</a>	-->	
 	<input type="button"  onclick="javascript:location.href='listarAlunos.jsp'"  value="Voltar">
-	<a href="AlterarServlet?nome=<%=aluno.getNome()%>">Alterar</a>
+	<a href="AlterarServlet?id=<%=aluno.getId()%>">Alterar</a>
 	
 	
 	

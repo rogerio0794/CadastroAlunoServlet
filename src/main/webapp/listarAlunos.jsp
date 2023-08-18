@@ -31,17 +31,17 @@ Clique <a href="cadastrarAluno.jsp">aqui</a> para cadastar um novo aluno
 	<%  if (listaAlunos != null) {
 			for (Aluno aluno : listaAlunos) { %>
 		<tr>	
-			<td> <a href="DetalharServlet?nome=<%= aluno.getNome() %>">Detalhar</a></td>
+			<td> <a href="DetalharServlet?id=<%= aluno.getId() %>"> <%=aluno.getId() %></a></td>
 			<td> <%= aluno.getNome() %>   </td>
 			<td> <%= aluno.getIdade()  %>   </td>
 			<td> <%= aluno.getGenero() %>   </td>
 			<td> <%= aluno.getSemestre() %>   </td>
-			<td> <a href="ExcluirServlet?nome=<%= aluno.getNome() %>">Excluir</a></td>
+			<td> <a href="ExcluirServlet?id=<%= aluno.getId() %>">Excluir</a></td>
 		</tr>
 		<% } }%>
 	
 	
-
+		
 
 
 

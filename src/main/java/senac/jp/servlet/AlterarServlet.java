@@ -22,26 +22,24 @@ public class AlterarServlet extends HttpServlet {
 		
 		System.out.println("------------- Passei no servlet de alterar ------------");
 		
-		String nome = request.getParameter("nome");
-		System.out.println(nome);
 		
-		// Adicionar a lista de alunos na sessão
-		HttpSession session =  request.getSession();	
-				
-		// Recuperando a lista da seção
+		// Recupera o atributo id do aluno que seve ser alterado
+		String id = request.getParameter("id");
+		
+		// Recupera a lista de alunos da sessao
+		HttpSession session =  request.getSession();		
 		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos"); 
 		
-		// Recuperando o aluno da lista com o nome especificado
+		// Recuperando o aluno que tem o id informado (e que deve ser alterado)
 		Aluno aluno = null;
 		for (Aluno a : listaAlunos) {
-				if (a.getNome().equals(nome)) {
+				if (a.getId().toString().equals(id)) {
 					aluno = a;
 				}			
 		}
 		
-		// Colocar o aluno no resquest
-		request.setAttribute("aluno", aluno);
-		
+		// Adiciona o aluno no request, para exibir seus dados na pagina de alterar
+		request.setAttribute("aluno", aluno);		
 		
 		
 		// Encaminhar a requisição para o JSP

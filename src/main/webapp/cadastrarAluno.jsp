@@ -9,6 +9,10 @@
 <body>
 	<h1>Cadastro de Aluno</h1>
     <form action="ConfirmarCadastroServlet" method="post">
+    
+    	
+    
+    
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" ><br><br>
         

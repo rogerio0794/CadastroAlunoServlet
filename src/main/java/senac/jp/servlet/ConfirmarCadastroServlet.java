@@ -20,24 +20,29 @@ public class ConfirmarCadastroServlet extends HttpServlet {
 		
 		System.out.println("------------- Passei no servlet de confirmar cadastro ------------");
 		
-		// Recuperar os valores informados
+		// Recuperando a sessao
+		HttpSession session =  request.getSession();
+		
+		// Recuperando a lista da seção, caso não exista, cria
+		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos"); 
+			if (listaAlunos == null) {
+					listaAlunos = new ArrayList<>(); // Criando a lista
+			}
+		
+		// Recuperar os valores informados		
 		String nome = request.getParameter("nome");
 		String idade = request.getParameter("idade");
 		String genero = request.getParameter("genero");		
 		String semestre = request.getParameter("semestre");
 		
 		// Guardar no objeto aluno
-		Aluno aluno = new Aluno(nome,idade,genero,semestre);
+		Aluno aluno = new Aluno(listaAlunos.size()+1,nome,idade,genero,semestre);
+		// O id é o tamanho da lista -1 e vai seguir
+		// Não é a melhor solução!
+		
+			
 		
 		
-		// Adicionar a lista de alunos na sessão
-		HttpSession session =  request.getSession();	
-		
-		// Recuperando a lista da seção
-		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos"); 
-		if (listaAlunos == null) {
-			listaAlunos = new ArrayList<>(); // Criando a lista
-		}
 		
 		// Adicionando um aluno na lista
 		listaAlunos.add(aluno);		
