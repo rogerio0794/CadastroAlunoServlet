@@ -30,15 +30,18 @@ public class ConfirmarCadastroServlet extends HttpServlet {
 		Aluno aluno = new Aluno(nome,idade,genero,semestre);
 		
 		
-		// Adicionar o aluno na sessão
-		HttpSession session =  request.getSession();		
-		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos");
+		// Adicionar a lista de alunos na sessão
+		HttpSession session =  request.getSession();	
+		
+		// Recuperando a lista da seção
+		List<Aluno> listaAlunos =  (List<Aluno>) session.getAttribute("listaAlunos"); 
 		if (listaAlunos == null) {
 			listaAlunos = new ArrayList<>(); // Criando a lista
 		}
 		
 		// Adicionando um aluno na lista
-		listaAlunos.add(aluno);
+		listaAlunos.add(aluno);		
+		session.setAttribute("listaAlunos", listaAlunos);
 		request.setAttribute("aluno", aluno);
 		
 		

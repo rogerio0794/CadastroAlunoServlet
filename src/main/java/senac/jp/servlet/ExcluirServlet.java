@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@WebServlet("/DetalharServlet")
-public class DetalharServlet extends HttpServlet {
+@WebServlet("/ExcluirServlet")
+public class ExcluirServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
@@ -41,11 +41,11 @@ public class DetalharServlet extends HttpServlet {
 				}			
 		}
 		
-		// Colocar o aluno no resquest
-		request.setAttribute("aluno", aluno);
+		// Removendo
+		listaAlunos.remove(aluno);		
 		
 		// Encaminhar a requisição para o JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("detalharAluno.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("listarAlunos.jsp");
 		dispatcher.forward(request, response);
 		
 		

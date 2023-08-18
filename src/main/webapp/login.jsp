@@ -12,14 +12,18 @@
 <h2> Informe seu usuário e senha: </h2>
 <form action="LoginServlet" method="get">
 
-	Login: <input type="text" name="name">
+	<!-- operador ternário -->
+	<%= request.getAttribute("mensagem") == null ? "" : request.getAttribute("mensagem")%> 
+	<br><br>
+
+	Login: <input type="text" name="nome">
 	<br><br>
 	
 	
-	Senha: <input type="password" name="name">
+	Senha: <input type="password" name="senha">
 	<br><br>
 	
-	<input type="submit" name="Efeturar Login">
+	<input type="submit" name="Efetuar Login">
 	<br><br>
 
 </form>

@@ -10,25 +10,25 @@
 	<h1>Cadastro de Aluno</h1>
     <form action="ConfirmarCadastroServlet" method="post">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
+        <input type="text" id="nome" name="nome" ><br><br>
         
         <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" required><br><br>
+        <input type="number" id="idade" name="idade" ><br><br>
         
         <label for="semestre">Semestre:</label>
         <select id="semestre" name="semestre">
-            <option value="primeiro">Primeiro</option>
-            <option value="segundo">Segundo</option>          
+            <option value="Primeiro">Primeiro</option>
+            <option value="Segundo">Segundo</option>          
         </select><br><br>
         
         <label>Gênero:</label>
-        <input type="radio" id="generoM" name="genero" value="masculino">
+        <input type="radio" id="generoM" name="genero" value="Masculino">
         <label for="generoM">Masculino</label>
-        <input type="radio" id="generoF" name="genero" value="feminino">
+        <input type="radio" id="generoF" name="genero" value="Feminino">
         <label for="generoF">Feminino</label><br><br>
         
         <input type="submit" value="Confirmar Cadastro">
-        <a href="VoltarListarAlunosServlet">Voltar</a>
+        <a href="listarAlunos.jsp">Voltar</a>
     </form>
 
 

@@ -18,6 +18,11 @@ public class ConfirmarAlteracaoServlet extends HttpServlet {
 		
 		System.out.println("------------- Passei no servlet de confirmar alteração ------------");
 		
+		
+		
+		
+		
+		
 		// Encaminhar a requisição para o JSP
 		RequestDispatcher dispatcher = request.getRequestDispatcher("detalharAluno.jsp");
 		dispatcher.forward(request, response);

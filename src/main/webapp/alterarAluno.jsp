@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="senac.jp.dominio.Aluno" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,29 +11,35 @@
 
 <h2> Alterar Aluno:</h2>
 
+
+<%  Aluno aluno = (Aluno) request.getAttribute("aluno"); %>
+
 <form action="ConfirmarAlteracaoServlet" method="get">
 
- 		<label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
-        
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" required><br><br>
-
- 		<label for="semestre">Semestre:</label>
-        <select id="semestre" name="semestre">
-            <option value="primeiro">Primeiro</option>
-            <option value="segundo">Segundo</option>          
-        </select><br><br>
-        
-         <label>Gênero:</label>
-        <input type="radio" id="generoM" name="genero" value="masculino">
-        <label for="generoM">Masculino</label>
-        <input type="radio" id="generoF" name="genero" value="feminino">
-        <label for="generoF">Feminino</label><br><br>
-        
-		<input type="submit" value="Confirmar Alteração">
-        <input type="button" onclick="javascript:history.back()" value="Voltar">
+		Nome: 
+		<input type="text"  name="nome"  value="<%= aluno.getNome()%>" >
 		<br><br>
+		
+		Idade:
+		<input type="number" name="idade">
+		<br><br>
+		
+		Semestre:		
+        <select name="semestre">
+            <option value="Primeiro">Primeiro</option>
+            <option value="Segundo">Segundo</option>          
+        </select>
+        <br><br>
+		
+		Gênero:
+		<input type="radio" name="genero" value="Masculino"> Masculino
+		<input type="radio" name="genero" value="Feminino"> Feminino
+		<br><br>
+				
+		<input type="submit" value="Confirmar Alteração">
+        <a href="listarAlunos.jsp">Voltar</a>
+
+
 </form> 
 </body>
 </html>

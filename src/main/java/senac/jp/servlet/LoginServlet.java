@@ -15,9 +15,32 @@ public class LoginServlet extends HttpServlet {
 		
 		System.out.println("------------- Passei no servlet de login ------------");
 		
+		
+		// Senha		
+		String nome = request.getParameter("nome");
+		String senha = request.getParameter("senha");
+		
+		System.out.println(nome);
+		System.out.println(senha);
+		
 		// Encaminhar a requisição para o JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("listarAlunos.jsp");
-		dispatcher.forward(request, response);
+		if (nome.equals("admin")        && senha.equals("admin")) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("listarAlunos.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			
+			request.setAttribute("mensagem", "Erro no login");
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		
+		
+		
+		
+	
+		
 		
 		
 	}
