@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> 
 <%@page import="java.util.ArrayList, java.util.List, senac.jp.dominio.Aluno" %>  
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Alunos Cadastrados</title>
 </head>
 <body>

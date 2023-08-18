@@ -1,9 +1,7 @@
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
- <%@page import="senac.jp.dominio.Aluno" %>
+<%@page import="senac.jp.dominio.Aluno" %>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>

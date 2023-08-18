@@ -40,8 +40,6 @@ public class ConfirmarCadastroServlet extends HttpServlet {
 		// O id é o tamanho da lista -1 e vai seguir
 		// Não é a melhor solução!
 		
-			
-		
 		
 		
 		// Adicionando um aluno na lista
