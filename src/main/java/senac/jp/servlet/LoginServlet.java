@@ -18,10 +18,8 @@ public class LoginServlet extends HttpServlet {
 		
 		// Senha		
 		String nome = request.getParameter("nome");
-		String senha = request.getParameter("senha");
-		
-		System.out.println(nome);
-		System.out.println(senha);
+		String senha = request.getParameter("senha");	
+	
 		
 		// Encaminhar a requisição para o JSP
 		if (nome.equals("admin")        && senha.equals("admin")) {
