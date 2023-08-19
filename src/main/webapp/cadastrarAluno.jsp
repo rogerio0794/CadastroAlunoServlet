@@ -11,10 +11,10 @@
     
     
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" ><br><br>
+        <input type="text" id="nome" name="nome" required><br><br>
         
         <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" ><br><br>
+        <input type="number" id="idade" name="idade" required><br><br>
         
         <label for="semestre">Semestre:</label>
         <select id="semestre" name="semestre">
